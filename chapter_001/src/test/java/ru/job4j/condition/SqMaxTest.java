@@ -22,8 +22,8 @@ public class SqMaxTest {
     @Test
     public void whenThirdMax() {
         SqMax check = new SqMax();
-        int result = check.max(1, 2, 4, 3);
-        assertThat(result, is(4));
+        int result = check.max(5, 4, 8, 3);
+        assertThat(result, is(8));
     }
 
     @Test
