@@ -1,3 +1,10 @@
+/**
+ * Package for calculate task.
+ *
+ * @author Petr Arsentev (parsentev@yandex.ru)
+ * @version 1.0
+ * @since 12.12.2019
+ */
 package ru.job4j.calculator;
 
 public class Calculator {
