@@ -2,18 +2,24 @@ package ru.job4j.converter;
 
 public class Converter {
 
-    public static int rubleToEuro(int value) { return value / 70; }
+    public static int rubleToEuro(int value) {
+        return value / 70;
+    }
 
-    public static int rubleToDollar(int value) { return value / 60; }
+    public static int rubleToDollar(int value) {
+        return value / 60;
+    }
 
-    public static int euroToRuble(int value) { return value * 70; }
+    public static int euroToRuble(int value) {
+        return value * 70;
+    }
 
     public static int dollarToRuble(int value) {
         return value * 60;
     }
 
     public static void main(String[] args) {
-       //не знаю надо ли менять полностью метод. Просто закоментирую часть чтоб вывод в консоль был более понятен
+        //не знаю надо ли менять полностью метод. Просто закоментирую часть чтоб вывод в консоль был более понятен
         /*
         int euro = rubleToEuro(140);
         int dollar = rubleToDollar(180);
@@ -43,7 +49,7 @@ public class Converter {
 
         int in3 = 5;
         int expected3 = 300;
-        int out3 =  dollarToRuble(in3);
+        int out3 = dollarToRuble(in3);
         boolean passed3 = expected3 == out3;
         System.out.println("5 dollars are 300. Test result : " + passed3);
 

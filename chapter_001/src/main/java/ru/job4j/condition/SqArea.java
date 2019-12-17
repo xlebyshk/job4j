@@ -3,12 +3,12 @@ package ru.job4j.condition;
 public class SqArea {
     public static double square(int p, int k) {
         int width = 1;
-        int lenght = width*k;
-        int b=width+lenght;
-        int a= p/2;
-        width=a/b;
-        lenght=width*k;
-        return width*lenght;
+        int lenght = width * k;
+        int b = width + lenght;
+        int a = p / 2;
+        width = a / b;
+        lenght = width * k;
+        return width * lenght;
     }
 
     public static void main(String[] args) {
