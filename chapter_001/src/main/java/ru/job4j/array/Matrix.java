@@ -3,15 +3,15 @@ package ru.job4j.array;
 public class Matrix {
     public int[][] multiple(int size) {
         int[][] table = new int[size][size];
-        int k = 1;
-        int d = 1;
-        for (int i = 0; i < size; i++) {
+        int row = 1;
+        int cell = 1;
+        for (int index = 0; index < size; index++) {
             for (int l = 0; l < size; l++) {
-                table[i][l] = k * d;
-                k++;
+                table[index][l] = row * cell;
+                row++;
             }
-            d++;
-            k = 1;
+            cell++;
+            row = 1;
         }
         return table;
     }

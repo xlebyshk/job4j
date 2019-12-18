@@ -19,16 +19,6 @@ public class Converter {
     }
 
     public static void main(String[] args) {
-        //не знаю надо ли менять полностью метод. Просто закоментирую часть чтоб вывод в консоль был более понятен
-        /*
-        int euro = rubleToEuro(140);
-        int dollar = rubleToDollar(180);
-        int rubE = euroToRuble(2);
-        int rubD = dollarToRuble(5);
-        System.out.println("140 rubles are " + euro + " euro.");
-        System.out.println("180 rubles are " + dollar + " dollar.");
-        System.out.println("2 euro are " + rubE + " ruble.");
-        System.out.println("5 dollars are " + rubD + " ruble.");*/
         int in = 140;
         int expected = 2;
         int out = rubleToEuro(in);
