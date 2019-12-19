@@ -3,7 +3,7 @@ package ru.job4j.array;
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        int  horizontal = 0;
+        int horizontal = 0;
         int vertical = 0;
         char sign = ' ';
         for (int row = 0; row < board.length; row++) {
@@ -19,7 +19,7 @@ public class MatrixCheck {
                         vertical++;
                     }
                 }
-                if (vertical == board.length ||  horizontal == board.length) {
+                if (vertical == board.length || horizontal == board.length) {
                     result = true;
                     break;
                 }
