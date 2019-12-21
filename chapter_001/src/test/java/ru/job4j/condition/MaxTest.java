@@ -22,4 +22,10 @@ public class MaxTest {
         int result = Max.max(6,9,23,10);
         assertThat(result, is(23));
     }
+
+    @Test
+    public void whenMax1To4Then4(){
+        int result = Max.max(1,Max.max(2,4));
+        assertThat(result, is(4));
+    }
 }
