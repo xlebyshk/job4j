@@ -1,9 +1,6 @@
 package ru.job4j.tracker;
 
 public class Item {
-    //public Item() {
- //   }
-
     public Item(String name) {
     }
 
