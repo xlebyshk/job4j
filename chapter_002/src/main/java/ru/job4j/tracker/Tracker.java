@@ -4,24 +4,20 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
-    /**
-     * Массив для хранение заявок.
-     */
+
     private final Item[] items = new Item[100];
 
-    /**
-     * Указатель ячейки для новой заявки.
-     */
     private int position = 0;
 
-    /**
-     * Метод реализующий добавление заявки в хранилище
-     * @param item новая заявка
-     */
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
+    }
+
+    private String generateId() {
+        Random rm = new Random();
+        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
     public Item[] findAll() {
@@ -30,32 +26,57 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        int count = 0;
+        int size = 0;
         Item[] result = new Item[this.position];
         for (int index = 0; index < this.position; index++) {
             if (items[index].getName().equals(key)) {
-                result[count++] = this.items[index];
+                result[size++] = this.items[index];
             }
         }
-        return Arrays.copyOf(result, count);
+        return Arrays.copyOf(result, size);
     }
+
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < this.position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    /*public Item findById(String id) {
+        Item result = null;
+        result = items[indexOf(id)];
+        return result;
+    }*/
+
+    public void replace(String id, Item item) {
+        this.items[indexOf(id)] = item;
+        item.setId(id);
+    }
+
+    public void delete(String id) {
+        int index = indexOf(id);
+        int start = index + 1;
+        int distPos = index;
+        int size = position - index;
+        System.arraycopy(items, start, items, distPos, size);
+        items[position] = null;
+        position--;
+    }
+
 
     public Item findById(String id) {
         Item result = null;
         for (int index = 0; index < this.position; index++) {
             if (items[index].getId().equals(id)) {
                 result = items[index];
+                break;
             }
         }
         return result;
-    }
-    /**
-     * Метод генерирует уникальный ключ для заявки.
-     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
-     * @return Уникальный ключ.
-     */
-    private String generateId() {
-        Random rm = new Random();
-        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 }
