@@ -58,14 +58,18 @@ public class Tracker {
         item.setId(id);
     }
 
-    public void delete(String id) {
+    public boolean delete(String id) {
         int index = indexOf(id);
-        int start = index + 1;
-        int distPos = index;
-        int size = position - index;
-        System.arraycopy(items, start, items, distPos, size);
-        items[position] = null;
-        position--;
+        if (index != -1) {
+            int start = index + 1;
+            int distPos = index;
+            int size = position - index;
+            System.arraycopy(items, start, items, distPos, size);
+            items[position] = null;
+            position--;
+            return true;
+        }
+        return false;
     }
 
 

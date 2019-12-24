@@ -10,7 +10,12 @@ public class FindByIdAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         String id = input.askStr("Enter id: ");
         Item item = tracker.findById(id);
-        System.out.println("name: " + item.getName() + "\n id: " + item.getId());
+        if (item != null) {
+            System.out.println("name: " + item.getName() + System.lineSeparator()  + "id: " + item.getId());
+        } else {
+            System.out.println("Not found");
+        }
+
         return true;
     }
 }
