@@ -47,12 +47,6 @@ public class Tracker {
         return rsl;
     }
 
-    /*public Item findById(String id) {
-        Item result = null;
-        result = items[indexOf(id)];
-        return result;
-    }*/
-
     public void replace(String id, Item item) {
         this.items[indexOf(id)] = item;
         item.setId(id);
