@@ -16,15 +16,4 @@ public class ConvertList2Array {
         }
         return array;
     }
-
-    public static void main(String[] args) {
-        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
-        int[][] rsl = toArray(list, 3);
-        for (int[] row : rsl) {
-            for (int[] cell : rsl) {
-                System.out.println(cell + " ");
-            }
-            System.out.println(row);
-        }
-    }
 }

@@ -21,7 +21,7 @@ public class FindByNameActionTest {
         FindByNameAction act = new FindByNameAction();
         act.execute(new StubInput(new String[] {"fix bug"}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                .add("name: " + item.getName() + "\n id: " + item.getId())
+                .add("name: " + item.getName() + System.lineSeparator()  + "id: " + item.getId())
                 .add("Done")
                 .toString();
         assertThat(new String(out.toByteArray()), is(expect));
