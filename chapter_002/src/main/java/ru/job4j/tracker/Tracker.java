@@ -45,18 +45,25 @@ public class Tracker {
         return rsl;
     }
 
-    public void replace(String id, Item item) {
-        this.items.set(indexOf(id), item);
-        item.setId(id);
+    public boolean replace(String id, Item item) {
+        boolean result = false;
+        int index = indexOf(id);
+        if (index != -1) {
+            this.items.set(index, item);
+            item.setId(id);
+            result = true;
+        }
+        return result;
     }
 
     public boolean delete(String id) {
+        boolean result = false;
         int index = indexOf(id);
         if (index != -1) {
             this.items.remove(index);
-            return true;
+            result = true;
         }
-        return false;
+        return result;
     }
 
 
