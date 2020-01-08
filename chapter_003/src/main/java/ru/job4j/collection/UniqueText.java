@@ -7,9 +7,16 @@ public class UniqueText {
         boolean rsl = false;
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
+        HashSet<String> orig = new HashSet<>();
         HashSet<String> check = new HashSet<>();
         for (String value : origin) {
+            orig.add(value);
+        }
+        for (String value : text) {
             check.add(value);
+        }
+        for (String value : orig) {
+            rsl = check.contains(value);
         }
         return rsl;
     }
