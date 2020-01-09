@@ -12,15 +12,4 @@ public class ItemSort implements Comparator<Item> {
         return first.getName().compareTo(second.getName());
     }
 
-    public static void main(String[] args) {
-        List<Item> items = Arrays.asList(
-                new Item("Sergey"),
-                new Item("Igor")
-        );
-        System.out.println("unsort");
-        System.out.println(items);
-        Collections.sort(items, new ItemSort());
-        System.out.println("sort");
-        System.out.println(items);
-    }
 }

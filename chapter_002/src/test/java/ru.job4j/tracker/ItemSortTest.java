@@ -16,6 +16,7 @@ public class ItemSortTest {
     @Test
     public void sort() {
 
+        List<Item> ex = List.of(new Item("Igor"), new Item("Sergey"));
         List<Item> items = Arrays.asList(
                 new Item("Sergey"),
                 new Item("Igor")
@@ -23,6 +24,20 @@ public class ItemSortTest {
 
         Collections.sort(items, new ItemSort());
         List<Item> out = items;
-        assertThat(items.toString(), is(out.toString()));
+        assertThat(ex.toString(), is(out.toString()));
+    }
+
+    @Test
+    public void sortReverse() {
+
+        List<Item> ex = List.of(new Item("Sergey"), new Item("Igor"));
+        List<Item> items = Arrays.asList(
+                new Item("Sergey"),
+                new Item("Igor")
+        );
+
+        Collections.sort(items, new ItemSortReverse());
+        List<Item> out = items;
+        assertThat(ex.toString(), is(out.toString()));
     }
 }
