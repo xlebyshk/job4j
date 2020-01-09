@@ -17,9 +17,7 @@ public class BankService {
     }
 
     public void addAccount(String passport, Account account) {
-        if (findByPassport(passport) != null) {
-            this.users.get(findByPassport(passport)).add(account);
-        }
+        this.users.get(findByPassport(passport)).add(account);
     }
 
     public User findByPassport(String passport) {
@@ -61,8 +59,6 @@ public class BankService {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             rsl = true;
         }
-
-
         return rsl;
     }
 }

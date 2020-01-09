@@ -8,7 +8,6 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.StringJoiner;
 
-import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
