@@ -19,8 +19,8 @@ public class UserTest {
         users.add(new UserSort("Petr", 32));
         users.add(new UserSort("Ivan", 31));
         Iterator<UserSort> it = users.iterator();
-        assertThat(it.next(), is(new UserSort("Petr", 32)));
-        assertThat(it.next(), is(new UserSort("Ivan", 31)));
+        assertThat(it.next().getName(), is("Ivan"));
+        assertThat(it.next().getName(), is("Petr"));
     }
 
     @Test
