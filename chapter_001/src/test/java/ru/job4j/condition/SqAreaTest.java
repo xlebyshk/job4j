@@ -6,11 +6,11 @@ import org.junit.Test;
 public class SqAreaTest {
 
     @Test
-    public void sqare(){
+    public void sqare() {
         int inP = 6;
         int inK = 2;
         double expected = 2;
         double out = SqArea.square(inP, inK);
-        Assert.assertEquals(expected,out,0.01);
+        Assert.assertEquals(expected, out, 0.01);
     }
 }
