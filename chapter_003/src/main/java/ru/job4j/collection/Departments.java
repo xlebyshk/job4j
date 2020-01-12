@@ -11,9 +11,9 @@ public class Departments {
         for (String value : deps) {
             String start = "";
             for (String el : value.split("/")) {
-                if (start.length() > 0){
+                if (start.length() > 0) {
                     start = start + "/" + el;
-                }else{
+                } else {
                     start = el;
                 }
                 tmp.add(start);
