@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/xlebyshk/job4j.svg?branch=master)](https://travis-ci.org/xlebyshk/job4j)<br> 
 [![codecov](https://codecov.io/gh/xlebyshk/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/xlebyshk/job4j)<br>
 ---
 Начал проходить данный курс (Java Стажёр) 02.12.19.<br>
