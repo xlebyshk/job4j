@@ -1,12 +1,11 @@
-package collection;
+package ru.job4j.collection;
 
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class DepartmentsTest {
@@ -32,6 +31,14 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        assertThat(rsl, greaterThan(0));
+        assertThat(rsl, lessThan(0));
+    }
+
+    @Test
+    public void test() {
+        List<String> input = Arrays.asList("k2/sk1", "k2");
+        List<String> expect = Arrays.asList("k2", "k2/sk1");
+        Departments.sortDesc(input);
+        assertThat(input, is(expect));
     }
 }

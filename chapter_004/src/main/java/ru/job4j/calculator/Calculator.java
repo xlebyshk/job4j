@@ -12,7 +12,7 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        calc.multiple(
+        /*calc.multiple(
                 0, 10, 2,
                 (value, index) -> {
                     double result = value * index;
@@ -20,6 +20,9 @@ public class Calculator {
                     return result;
                 },
                 System.out::println
-        );
+        );*/
+        calc.multiple(0, 10, 2,
+                MathUtil::add,
+                result -> System.out.println(result));
     }
 }

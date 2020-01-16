@@ -1,20 +1,27 @@
-package collection;
+package ru.job4j.collection;
 
 import java.util.Comparator;
 
 public class DepDescComp implements Comparator<String> {
+
     @Override
-    public int compare(String o1, String o2) {
-        int result = o2.length() - o1.length();
-        int length = Math.min(o1.length(), o2.length());
-        for (int index = 0; index < length; index++) {
-            if (o2.charAt(index) != o1.charAt(index)) {
-                result = o1.compareTo(o2);
-                break;
+    public int compare(String str1, String str2) {
+        int strSize1 = str1.length();
+        int strSize2 = str2.length();
+
+        int size = Math.min(strSize1, strSize2);
+
+        for (int i = 0; i < size; i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                return Character.compare(str2.charAt(i), str1.charAt(i));
             }
-            result = o2.length() - o1.length();
         }
-        return result;
+
+        if (strSize1 != strSize2) {
+            return strSize1 - strSize2;
+        }
+
+        return 0;
     }
 }
 
