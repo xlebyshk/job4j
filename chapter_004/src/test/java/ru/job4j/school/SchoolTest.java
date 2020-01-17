@@ -3,7 +3,9 @@ package ru.job4j.school;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -40,4 +42,13 @@ public class SchoolTest {
         assertThat(rsl.get(0), is(student));
     }
 
+    @Test
+    public void convertListToMap() {
+        Student student = new Student(89, "Sergey");
+        List<Student> students = Collections.singletonList(student);
+        School school = new School();
+        Map<String, Student> rsl = school.convertToMap(students);
+        assertThat(rsl.containsKey("Sergey"), is(true));
+        assertThat(rsl.containsValue(student), is(true));
+    }
 }
