@@ -1,6 +1,7 @@
 package ru.job4j.school;
 
-public class Student {
+public class Student implements Comparable<Student> {
+
     private final int score;
     private String name;
 
@@ -19,5 +20,10 @@ public class Student {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return o.getScore() - this.getScore();
     }
 }
