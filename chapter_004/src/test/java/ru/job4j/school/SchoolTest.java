@@ -51,13 +51,13 @@ public class SchoolTest {
 
     @Test
     public void levelOf() {
-        Student student = new Student(89,"Sergey");
-        Student student2 = new Student(90,"Pavel");
-        Student student3 = new Student(30,"kirill");
-        List<Student> students = Arrays.asList(student,student2,student3);
-        List<Student> expect = Arrays.asList(student2,student);
+        Student student = new Student(89, "Sergey");
+        Student student2 = new Student(90, "Pavel");
+        Student student3 = new Student(30, "kirill");
+        List<Student> students = Arrays.asList(student, student2, student3);
+        List<Student> expect = Arrays.asList(student2, student);
         School school = new School();
-        List<Student> rsl = school.levelOf(students,70);
+        List<Student> rsl = school.levelOf(students, 70);
         assertThat(rsl, is(expect));
     }
 

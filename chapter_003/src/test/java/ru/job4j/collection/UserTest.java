@@ -15,9 +15,10 @@ import static org.junit.Assert.*;
 public class UserTest {
     @Test
     public void whenAsc() {
-        Set<UserSort> users = new TreeSet<>();
-        users.add(new UserSort("Petr", 32));
-        users.add(new UserSort("Ivan", 31));
+        Set<UserSort> users = Set.of(
+                new UserSort("Petr", 32),
+                new UserSort("Ivan", 31)
+        );
         Iterator<UserSort> it = users.iterator();
         assertThat(it.next().getName(), is("Ivan"));
         assertThat(it.next().getName(), is("Petr"));

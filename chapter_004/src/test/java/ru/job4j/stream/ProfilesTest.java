@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class ProfilesTest {
 
     @Test
-    public void ListAddress() {
+    public void listAddress() {
         Profiles profiles = new Profiles();
         List<Profile> profiles1 = Collections.singletonList(new Profile(new Address("st.Petersburg", "Gagarina", 24, 168)));
         List<Address> result = profiles.collect(profiles1);
@@ -19,7 +19,7 @@ public class ProfilesTest {
     }
 
     @Test
-    public void WhenTheAddressIsEqualCompareTheCity() {
+    public void whenTheAddressIsEqualCompareTheCity() {
         Profiles profiles = new Profiles();
         List<Profile> profiles1 = List.of(
                 new Profile(new Address("Samara", "Gagarina", 24, 168)),
