@@ -27,15 +27,15 @@ public class StartUITest {
 
     @Test
     public void whenCheckOutput() {
-        /*Tracker tracker = new Tracker();
+        Tracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
         ShowAction act = new ShowAction();
-        act.execute(new StubInput(new String[]{}), tracker, System.out::println);
+        act.execute(new StubInput(new String[]{}), tracker, output);
         String expected = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add("name: " + item.getName() + System.lineSeparator() + "id: " + item.getId())
                 .toString();
-        assertThat(new String(out.toByteArray()), is(expected));*/
+        assertThat(new String(out.toByteArray()), is(expected));
     }
 
 }

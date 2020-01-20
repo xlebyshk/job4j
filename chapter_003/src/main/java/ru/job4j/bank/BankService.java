@@ -1,6 +1,5 @@
 package ru.job4j.bank;
 
-import ru.job4j.collection.Citizen;
 
 import java.util.*;
 
@@ -8,11 +7,14 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        this.users.putIfAbsent(user, new ArrayList<Account>());
+        this.users.putIfAbsent(user, new ArrayList<>());
     }
 
     public void addAccount(String passport, Account account) {
-        this.users.get(findByPassport(passport)).add(account);
+        User key = findByPassport(passport);
+        if (key != null) {
+            this.users.get(key).add(account);
+        }
     }
 
     public User findByPassport(String passport) {
@@ -36,7 +38,7 @@ public class BankService {
         boolean rsl = false;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
-        if (srcAccount.getBalance() >= amount && srcAccount != null) {
+        if (srcAccount.getBalance() >= amount) {
             destAccount.setBalance(destAccount.getBalance() + amount);
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             rsl = true;
